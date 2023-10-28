@@ -14,9 +14,17 @@ struct SearchView: View {
         VStack{
             SearchBar(text: $text, isEditing: $isEditing)
                 .padding(.horizontal)
-            List(0..<9) { i in
-                SearchCell(tag: "henlo", tweet: String(i))
-            }.listStyle(.plain)
+            if isEditing{
+                List(0..<9){ _ in
+                    SearchUserCell()
+                    
+                }.listStyle(.plain)
+            }else{
+                List(0..<9) { i in
+                    SearchCell(tag: "henlo", tweet: String(i))
+                }.listStyle(.plain)
+
+            }
         }
     }
 }
