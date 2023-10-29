@@ -9,7 +9,11 @@ import SwiftUI
 
 struct MessagesView: View {
     var body: some View {
-        Text("Messages")
+        ScrollView{
+            ForEach(0..<9) { _ in
+                MessageCell()
+            }
+        }
     }
 }
 
