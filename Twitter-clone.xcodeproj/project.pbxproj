@@ -15,6 +15,9 @@
 		667334362AECD3EE00D86366 /* SearchUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667334352AECD3EE00D86366 /* SearchUserCell.swift */; };
 		667334382AECD93F00D86366 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667334372AECD93F00D86366 /* Extensions.swift */; };
 		6673343A2AECDE3900D86366 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667334392AECDE3900D86366 /* NotificationCell.swift */; };
+		6688A9802AEF6955008F08B3 /* SlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6688A97F2AEF6955008F08B3 /* SlideMenu.swift */; };
+		6688A9822AEF6BBF008F08B3 /* FollowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6688A9812AEF6BBF008F08B3 /* FollowView.swift */; };
+		6688A9842AEF721A008F08B3 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6688A9832AEF721A008F08B3 /* MenuButton.swift */; };
 		66DC41212AEEA6470023183B /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DC41202AEEA6470023183B /* MessageCell.swift */; };
 		66DC41232AEEB0A20023183B /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DC41222AEEB0A20023183B /* TopBar.swift */; };
 		66DC41252AEEB1F00023183B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66DC41242AEEB1F00023183B /* MainView.swift */; };
@@ -58,6 +61,9 @@
 		667334352AECD3EE00D86366 /* SearchUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserCell.swift; sourceTree = "<group>"; };
 		667334372AECD93F00D86366 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		667334392AECDE3900D86366 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		6688A97F2AEF6955008F08B3 /* SlideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenu.swift; sourceTree = "<group>"; };
+		6688A9812AEF6BBF008F08B3 /* FollowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowView.swift; sourceTree = "<group>"; };
+		6688A9832AEF721A008F08B3 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		66DC41202AEEA6470023183B /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		66DC41222AEEB0A20023183B /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
 		66DC41242AEEB1F00023183B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -217,6 +223,7 @@
 				66F89EF12AEAAB04008DA234 /* HomeView.swift */,
 				66DC41222AEEB0A20023183B /* TopBar.swift */,
 				66DC41242AEEB1F00023183B /* MainView.swift */,
+				6688A97F2AEF6955008F08B3 /* SlideMenu.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -270,6 +277,8 @@
 			children = (
 				6673342D2AEB9B4700D86366 /* MultilineTextField.swift */,
 				667334332AECC1F700D86366 /* SearchBar.swift */,
+				6688A9812AEF6BBF008F08B3 /* FollowView.swift */,
+				6688A9832AEF721A008F08B3 /* MenuButton.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -421,9 +430,11 @@
 			files = (
 				667334302AEBC71800D86366 /* TweetCellView.swift in Sources */,
 				66DC41252AEEB1F00023183B /* MainView.swift in Sources */,
+				6688A9842AEF721A008F08B3 /* MenuButton.swift in Sources */,
 				66DC41212AEEA6470023183B /* MessageCell.swift in Sources */,
 				667334322AECBD3800D86366 /* SearchCell.swift in Sources */,
 				6673342C2AEB991000D86366 /* CreateTweetView.swift in Sources */,
+				6688A9802AEF6955008F08B3 /* SlideMenu.swift in Sources */,
 				66F89EF62AEAAF20008DA234 /* SearchView.swift in Sources */,
 				667334362AECD3EE00D86366 /* SearchUserCell.swift in Sources */,
 				66F89EF42AEAAF19008DA234 /* FeedView.swift in Sources */,
@@ -431,6 +442,7 @@
 				66F89EBB2AEAA846008DA234 /* ContentView.swift in Sources */,
 				66DC41232AEEB0A20023183B /* TopBar.swift in Sources */,
 				66F89EF22AEAAB04008DA234 /* HomeView.swift in Sources */,
+				6688A9822AEF6BBF008F08B3 /* FollowView.swift in Sources */,
 				66F89EFA2AEAAF63008DA234 /* MessagesView.swift in Sources */,
 				6673342E2AEB9B4700D86366 /* MultilineTextField.swift in Sources */,
 				66F89EB92AEAA846008DA234 /* Twitter_cloneApp.swift in Sources */,
