@@ -25,6 +25,9 @@ struct SearchBar: View {
                             .padding(.leading, 8)
                     }
                 )
+                .onTapGesture {
+                    isEditing = true
+                }
             Button{
                 isEditing = false
                 text = ""
@@ -36,8 +39,6 @@ struct SearchBar: View {
                     .transition(.move(edge: .trailing))
                     .animation(.default)
             }
-        }.onTapGesture {
-            isEditing = true
         }
     }
 }

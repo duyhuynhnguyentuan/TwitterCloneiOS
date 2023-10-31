@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct TopBar: View {
+    
     @State var width = UIScreen.main.bounds.width
+    @Binding var x: CGFloat
     var body: some View {
         VStack{
             HStack{
                 Button{
-                    
+                    withAnimation{
+                        x = 0
+                    }
                 }label: {
                     Image(systemName: "line.horizontal.3")
                         .font(.system(size: 24))
@@ -34,9 +38,10 @@ struct TopBar: View {
                 .opacity(0.3)
         }
         .background(Color.white)
+        .padding(.top)
     }
 }
 
-#Preview {
-    TopBar()
-}
+//#Preview {
+//    TopBar()
+//}
