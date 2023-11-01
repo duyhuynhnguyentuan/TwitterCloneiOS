@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BlurView: UIViewRepresentable {
     func makeUIView(context: Context) -> some UIVisualEffectView {
-        let view = UIVisualEffectView(effect: UIBlurEffect(style: .systemChromeMaterial))
+        let view = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
     return view
     }
     func updateUIView(_ uiView: UIViewType, context: Context) {
