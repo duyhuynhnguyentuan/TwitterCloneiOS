@@ -13,7 +13,7 @@ struct TabButton: View {
     var animation:Namespace.ID
     var body: some View {
         Button {
-            
+            currentTab = title
         }label: {
             LazyVStack(spacing: 12){
                 Text(title)

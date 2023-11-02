@@ -13,6 +13,7 @@ struct UserProfile: View {
     @State var currentTab = "Tweets"
     @State var tabBarOffset: CGFloat = 0
     @Namespace var animation
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
             VStack(spacing: 15){
@@ -28,7 +29,7 @@ struct UserProfile: View {
                                 .scaledToFill()
                                 .frame(width: getRect().width, height: minY > 0 ? 180 + minY : 180, alignment: .center)
                                 .cornerRadius(0)
-                            BlurView().opacity(blueViewOpacity())
+                            BlurView().opacity(blurViewOpacity())
                             VStack(spacing: 5){
                                 Text("Cem")
                                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -72,38 +73,41 @@ struct UserProfile: View {
                     }
                     .padding(.top, -25)
                     .padding(.bottom, -10)
-                    VStack(alignment: .leading, spacing: 8){
-                        Text("Cem")
-                            .font(.title2)
-                            .fontWeight(.bold)
-                            .foregroundColor(.primary)
-                        Text("@cem_salta")
-                            .foregroundColor(.gray)
-                        Text("Matcha that la cute vc 🍃. ")
-                        HStack(spacing: 5){
-                            Text("13")
+                    HStack{
+                        VStack(alignment: .leading, spacing: 8){
+                            Text("Cem")
+                                .font(.title2)
+                                .fontWeight(.bold)
                                 .foregroundColor(.primary)
-                                .fontWeight(.semibold)
-                            Text("Followers")
+                            Text("@cem_salta")
                                 .foregroundColor(.gray)
-                            Text("680")
-                                .foregroundColor(.primary)
-                                .fontWeight(.semibold)
-                                .padding(.leading, 10)
-                            Text("Following")
-                                .foregroundColor(.gray)
-                        }
-                    }
-                    .overlay(
-                        GeometryReader { proxy -> Color in
-                            let minY = proxy.frame(in: .global).minY
-                            DispatchQueue.main.async {
-                                self.titleOffset = minY
+                            Text("Matcha that la cute vc iu Matcha vl 🍃. ")
+                            HStack(spacing: 5){
+                                Text("13")
+                                    .foregroundColor(.primary)
+                                    .fontWeight(.semibold)
+                                Text("Followers")
+                                    .foregroundColor(.gray)
+                                Text("680")
+                                    .foregroundColor(.primary)
+                                    .fontWeight(.semibold)
+                                    .padding(.leading, 10)
+                                Text("Following")
+                                    .foregroundColor(.gray)
                             }
-                            return Color.clear
                         }
-                            .frame(width: 0, height: 0), alignment: .top
-                    )
+                            .overlay(
+                                GeometryReader { proxy -> Color in
+                                    let minY = proxy.frame(in: .global).minY
+                                    DispatchQueue.main.async {
+                                        self.titleOffset = minY
+                                    }
+                                    return Color.clear
+                                }
+                                    .frame(width: 0, height: 0), alignment: .top
+                            )
+                        Spacer()
+                    }.padding(.horizontal)
                     VStack{
                         ScrollView(.horizontal, showsIndicators: false){
                             HStack{
@@ -116,7 +120,7 @@ struct UserProfile: View {
                         Divider()
                     }
                     .padding(.top, 30)
-//                    .background(Color.white)
+                    .background(colorScheme == .dark ? Color.black : Color.white)
                     .offset(y: tabBarOffset < 90 ? -tabBarOffset + 90 : 0)
                     .overlay(
                         GeometryReader{ proxy -> Color in
@@ -146,7 +150,7 @@ struct UserProfile: View {
         }
         .ignoresSafeArea(.all, edges: .top)
     }
-    func blueViewOpacity() -> Double {
+    func blurViewOpacity() -> Double {
         let progress = -(offset + 80) / 150
         return Double(-offset > 80 ? progress : 0)
     }
