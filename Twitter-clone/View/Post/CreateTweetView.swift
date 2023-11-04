@@ -9,11 +9,12 @@ import SwiftUI
 
 struct CreateTweetView: View {
     @State var text = ""
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         VStack{
             HStack{
                 Button{
-                    
+                    dismiss()
                 }label: {
                     Text("Cancel")
                 }

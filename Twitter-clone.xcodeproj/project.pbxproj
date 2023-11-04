@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		666EAE3F2AF2128900DD8197 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666EAE3E2AF2128900DD8197 /* TabButton.swift */; };
+		666EFFBE2AF69A1A000C1932 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666EFFBD2AF69A1A000C1932 /* LogInView.swift */; };
 		6673342C2AEB991000D86366 /* CreateTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6673342B2AEB991000D86366 /* CreateTweetView.swift */; };
 		6673342E2AEB9B4700D86366 /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6673342D2AEB9B4700D86366 /* MultilineTextField.swift */; };
 		667334302AEBC71800D86366 /* TweetCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6673342F2AEBC71800D86366 /* TweetCellView.swift */; };
@@ -61,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		666EAE3E2AF2128900DD8197 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
+		666EFFBD2AF69A1A000C1932 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		6673342B2AEB991000D86366 /* CreateTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTweetView.swift; sourceTree = "<group>"; };
 		6673342D2AEB9B4700D86366 /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
 		6673342F2AEBC71800D86366 /* TweetCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCellView.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			children = (
 				667F3FDF2AF3E79E00891484 /* WelcomeView.swift */,
 				667897A22AF4E4D200B2CD76 /* RegisterView.swift */,
+				666EFFBD2AF69A1A000C1932 /* LogInView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				667897A32AF4E4D200B2CD76 /* RegisterView.swift in Sources */,
 				6688A9822AEF6BBF008F08B3 /* FollowView.swift in Sources */,
 				66F89EFA2AEAAF63008DA234 /* MessagesView.swift in Sources */,
+				666EFFBE2AF69A1A000C1932 /* LogInView.swift in Sources */,
 				6687F9572AF14AE200C0431C /* UserProfile.swift in Sources */,
 				6673342E2AEB9B4700D86366 /* MultilineTextField.swift in Sources */,
 				66F89EB92AEAA846008DA234 /* Twitter_cloneApp.swift in Sources */,
