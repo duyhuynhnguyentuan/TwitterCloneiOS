@@ -11,13 +11,14 @@ struct RegisterView: View {
     @State var name = ""
     @State var email = ""
     @State var password = ""
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
+    @StateObject var viewModel = AuthViewModel()
     var body: some View {
         VStack{
             ZStack{
                 HStack{
                     Button{
-                        presentationMode.wrappedValue.dismiss()
+                        dismiss()
                     }label: {
                         Text("Cancel")
                             .foregroundColor(.blue)
@@ -36,9 +37,10 @@ struct RegisterView: View {
                 .bold()
                 .padding(.top, 30)
             VStack(alignment: .leading){
-                CustomAuthTextField(placeholder: "Name", text: $name)
-                CustomAuthTextField(placeholder: "Phone number or email", text: $email)
-                SecureAuthTextField(placeholder: "Password", text: $password)
+                                CustomAuthTextField(placeholder: "Name", text: $name)
+                                CustomAuthTextField(placeholder: "Phone number or email", text: $email)
+                                SecureAuthTextField(placeholder: "Password", text: $password)
+            
             }
             Spacer()
             VStack{
@@ -48,7 +50,7 @@ struct RegisterView: View {
                 HStack{
                     Spacer()
                     Button{
-                        
+                        self.viewModel.register(reqBody: ["username": "Dao Huynh", "name": name, "email" : email, "password" : "1234561211" ])
                     }label: {
                         Capsule()
                             .frame(width: 60, height: 30, alignment: .center)
@@ -58,6 +60,7 @@ struct RegisterView: View {
                                 .foregroundColor(.white)
                             )
                     }
+                    .padding(.bottom)
                 }
                 .padding(.trailing, 24)
             }
