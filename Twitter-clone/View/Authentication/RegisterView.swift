@@ -50,7 +50,7 @@ struct RegisterView: View {
                 HStack{
                     Spacer()
                     Button{
-                        self.viewModel.register(reqBody: ["username": "Dao Huynh", "name": name, "email" : email, "password" : "1234561211" ])
+                        self.viewModel.register(name: name, username: name, password: email, email: password)
                     }label: {
                         Capsule()
                             .frame(width: 60, height: 30, alignment: .center)

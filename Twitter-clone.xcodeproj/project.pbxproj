@@ -20,6 +20,7 @@
 		667897A32AF4E4D200B2CD76 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667897A22AF4E4D200B2CD76 /* RegisterView.swift */; };
 		667897A52AF4E6B800B2CD76 /* CustomAuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667897A42AF4E6B800B2CD76 /* CustomAuthTextField.swift */; };
 		667897A72AF4E93500B2CD76 /* SecureAuthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667897A62AF4E93500B2CD76 /* SecureAuthTextField.swift */; };
+		667CAA692B0A597E00E0259A /* AuthServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667CAA682B0A597E00E0259A /* AuthServices.swift */; };
 		667F3FE02AF3E79E00891484 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667F3FDF2AF3E79E00891484 /* WelcomeView.swift */; };
 		6687F9572AF14AE200C0431C /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6687F9562AF14AE200C0431C /* UserProfile.swift */; };
 		6687F9592AF151DB00C0431C /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6687F9582AF151DB00C0431C /* BlurView.swift */; };
@@ -75,6 +76,7 @@
 		667897A22AF4E4D200B2CD76 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		667897A42AF4E6B800B2CD76 /* CustomAuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAuthTextField.swift; sourceTree = "<group>"; };
 		667897A62AF4E93500B2CD76 /* SecureAuthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureAuthTextField.swift; sourceTree = "<group>"; };
+		667CAA682B0A597E00E0259A /* AuthServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServices.swift; sourceTree = "<group>"; };
 		667F3FDF2AF3E79E00891484 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		6687F9562AF14AE200C0431C /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		6687F9582AF151DB00C0431C /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 		66F89EE62AEAAA0D008DA234 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				667CAA682B0A597E00E0259A /* AuthServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				667334302AEBC71800D86366 /* TweetCellView.swift in Sources */,
 				66DC41252AEEB1F00023183B /* MainView.swift in Sources */,
 				6687F9592AF151DB00C0431C /* BlurView.swift in Sources */,
+				667CAA692B0A597E00E0259A /* AuthServices.swift in Sources */,
 				6688A9842AEF721A008F08B3 /* MenuButton.swift in Sources */,
 				66BB3D132B07A04200D70E0E /* User.swift in Sources */,
 				66DC41212AEEA6470023183B /* MessageCell.swift in Sources */,
