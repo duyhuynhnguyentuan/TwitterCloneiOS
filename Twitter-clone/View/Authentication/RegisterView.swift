@@ -8,62 +8,73 @@
 import SwiftUI
 
 struct RegisterView: View {
+    
     @State var name = ""
     @State var email = ""
     @State var password = ""
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.presentationMode) var presentationMode
     @StateObject var viewModel = AuthViewModel()
+    
     var body: some View {
-        VStack{
-            ZStack{
-                HStack{
-                    Button{
-                        dismiss()
-                    }label: {
+        VStack {
+            ZStack {
+                HStack {
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }, label: {
                         Text("Cancel")
                             .foregroundColor(.blue)
-                    }
+                    })
+                    
                     Spacer()
-                }.padding(.horizontal)
+                }
+                .padding(.horizontal)
+                
                 Image("Twitter")
                     .resizable()
                     .scaledToFill()
                     .padding(.trailing)
                     .frame(width: 20, height: 20)
-                
             }
+            
             Text("Create your account")
                 .font(.title)
                 .bold()
-                .padding(.top, 30)
-            VStack(alignment: .leading){
-                                CustomAuthTextField(placeholder: "Name", text: $name)
-                                CustomAuthTextField(placeholder: "Phone number or email", text: $email)
-                                SecureAuthTextField(placeholder: "Password", text: $password)
+                .padding(.top, 35)
             
-            }
-            Spacer()
-            VStack{
+            
+            VStack(alignment: .leading, spacing: nil, content: {
+                CustomAuthTextField(placeholder: "Name", text: $name)
+                CustomAuthTextField(placeholder: "Phone number or email", text: $email)
+                SecureAuthTextField(placeholder: "Password", text: $password)
+            })
+            
+            Spacer(minLength: 0)
+            
+            VStack {
                 Rectangle()
                     .frame(height: 1)
                     .foregroundColor(.gray)
-                HStack{
+                
+                HStack {
+                    
                     Spacer()
-                    Button{
-                        self.viewModel.register(name: name, username: name, password: email, email: password)
-                    }label: {
+                    
+                    Button(action: {
+                        self.viewModel.register(name: name, username: name, email: email, password: password)
+                    }, label: {
                         Capsule()
                             .frame(width: 60, height: 30, alignment: .center)
-                            .foregroundColor(Color("bg"))
+                            .foregroundColor(Color(red: 29 / 255, green: 161 / 255, blue: 242 / 255))
                             .overlay(
-                            Text("Next")
-                                .foregroundColor(.white)
+                                Text("Next")
+                                    .foregroundColor(.white)
                             )
-                    }
-                    .padding(.bottom)
+                    })
                 }
                 .padding(.trailing, 24)
             }
+            
         }
     }
 }

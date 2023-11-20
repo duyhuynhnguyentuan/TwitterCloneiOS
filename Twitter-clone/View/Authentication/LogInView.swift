@@ -12,6 +12,7 @@ struct LogInView: View {
     @State var password = ""
     @State var emailDone = false
     @Environment(\.dismiss) var dismiss
+    @StateObject var viewModel = AuthViewModel()
     var body: some View {
         if !emailDone {
             VStack{
@@ -93,7 +94,7 @@ struct LogInView: View {
                 Spacer()
                 VStack{
                     Button{
-                        
+                        self.viewModel.login(email: email, password: password)
                     }label: {
                         Capsule()
                             .frame(width: 360, height: 40, alignment: .center)
