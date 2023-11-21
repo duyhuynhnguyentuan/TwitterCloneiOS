@@ -9,6 +9,19 @@ import SwiftUI
 class AuthViewModel: ObservableObject {
     @Published var isAuthenticated: Bool = false
     @Published var currentUser: User?
+    init() {
+        let defaults = UserDefaults.standard
+        let token = defaults.object(forKey: "jsonwebtoken")
+        if token != nil {
+            isAuthenticated = true
+            if let userId = defaults.object(forKey: "userid") {
+                fetchUser(userId: userId as! String)
+                print("user fetched")
+            }
+        }else {
+            isAuthenticated = false
+        }
+    }
     func login(email: String, password: String){
         let defaults = UserDefaults.standard
         AuthServices.login(email: email, password: password) { result in
@@ -41,6 +54,24 @@ class AuthViewModel: ObservableObject {
                     print(error.localizedDescription)
                 
                 
+            }
+        }
+    }
+    func fetchUser(userId: String) {
+        AuthServices.fetchUser(id: userId) { res in
+            switch res {
+            case .success(let data):
+                guard let user = try? JSONDecoder().decode(User.self, from: data as! Data) else {
+                    return
+                }
+                DispatchQueue.main.async{
+                    UserDefaults.standard.setValue(user.id, forKey: "userid")
+                    self.isAuthenticated = true
+                    self.currentUser = user
+                    print(user)
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }

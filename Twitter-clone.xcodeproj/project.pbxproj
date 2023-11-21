@@ -130,6 +130,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		665A70A22B0D072300A39C7C /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				66E57D362B07974200492E64 /* AuthViewModel.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		66F89EAC2AEAA846008DA234 = {
 			isa = PBXGroup;
 			children = (
@@ -210,7 +218,7 @@
 		66F89EE42AEAA9D8008DA234 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				66E57D362B07974200492E64 /* AuthViewModel.swift */,
+				665A70A22B0D072300A39C7C /* Authentication */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
