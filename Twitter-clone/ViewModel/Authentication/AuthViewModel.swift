@@ -12,6 +12,7 @@ class AuthViewModel: ObservableObject {
     init() {
         let defaults = UserDefaults.standard
         let token = defaults.object(forKey: "jsonwebtoken")
+    
         if token != nil {
             isAuthenticated = true
             if let userId = defaults.object(forKey: "userid") {
@@ -22,6 +23,7 @@ class AuthViewModel: ObservableObject {
             isAuthenticated = false
         }
     }
+    static let shared = AuthViewModel()
     func login(email: String, password: String){
         let defaults = UserDefaults.standard
         AuthServices.login(email: email, password: password) { result in
@@ -62,6 +64,8 @@ class AuthViewModel: ObservableObject {
             switch res {
             case .success(let data):
                 guard let user = try? JSONDecoder().decode(User.self, from: data as! Data) else {
+                    print("cannot find user in fetchUser")
+                    
                     return
                 }
                 DispatchQueue.main.async{
@@ -76,7 +80,15 @@ class AuthViewModel: ObservableObject {
         }
     }
     func logout(){
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
         
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
+        DispatchQueue.main.async {
+            self.isAuthenticated = false
+        }
     }
 }
 

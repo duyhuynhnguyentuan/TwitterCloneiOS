@@ -111,24 +111,34 @@ public class AuthServices {
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.addValue("application/json", forHTTPHeaderField: "Accept")
         
-        let task = session.dataTask(with: urlRequest) { data, res, err in
-            guard let err = err else{
+        let task = session.dataTask(with: urlRequest) { data, response, error in
+            if let error = error {
+                // Handle the case where an error occurred during the network request
+                completion(.failure(.custom(errorMessage: error.localizedDescription )))
                 return
             }
+            
             guard let data = data else {
+                // Handle the case where data is nil
+                completion(.failure(.invalidCredentials))
                 return
-                completion(.failure(.invalidCredentials))
             }
+            
+            // Handle the successful case where data is retrieved
             completion(.success(data))
-            do{
-                if let json = try? JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String : Any] {
-                    
+            
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    // Process JSON data if needed
+                    // Note: Currently, this block is empty in the provided code
                 }
-            }catch let err {
-                completion(.failure(.invalidCredentials))
-                print(err)
+            } catch let error {
+                // Handle any error during JSON serialization
+                completion(.failure(.custom(errorMessage: error.localizedDescription )))
+                print(error)
             }
         }
         task.resume()
     }
+
 }

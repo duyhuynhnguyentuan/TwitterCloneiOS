@@ -167,7 +167,6 @@
 				66F89EE42AEAA9D8008DA234 /* ViewModel */,
 				66F89EE32AEAA9CC008DA234 /* View */,
 				66F89EB82AEAA846008DA234 /* Twitter_cloneApp.swift */,
-				66F89EBA2AEAA846008DA234 /* ContentView.swift */,
 				66F89EBE2AEAA847008DA234 /* Twitter_clone.entitlements */,
 				66F89EBF2AEAA847008DA234 /* Preview Content */,
 			);
@@ -298,6 +297,7 @@
 		66F89EED2AEAAAB6008DA234 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				66F89EBA2AEAA846008DA234 /* ContentView.swift */,
 				667F3FDF2AF3E79E00891484 /* WelcomeView.swift */,
 				667897A22AF4E4D200B2CD76 /* RegisterView.swift */,
 				666EFFBD2AF69A1A000C1932 /* LogInView.swift */,
