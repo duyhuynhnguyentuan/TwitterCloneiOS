@@ -9,18 +9,24 @@ import SwiftUI
 
 struct CreateTweetView: View {
     @State var text = ""
-    @Environment(\.dismiss) var dismiss
+    @Binding var show : Bool
+    @ObservedObject var viewModel = CreateTweetViewModel()
     var body: some View {
         VStack{
             HStack{
                 Button{
-                    dismiss()
+                    self.show.toggle()
                 }label: {
                     Text("Cancel")
                 }
                 Spacer()
                 Button{
-                    
+                    if text != "" {
+                        self.viewModel.uploadPost(text: text)
+                       
+                    }
+                    self.show.toggle()
+                
                 }label: {
                     Text("Tweet")
                         .padding()
@@ -37,6 +43,6 @@ struct CreateTweetView: View {
     }
 }
 
-#Preview {
-    CreateTweetView()
-}
+//#Preview {
+//    CreateTweetView()
+//}
