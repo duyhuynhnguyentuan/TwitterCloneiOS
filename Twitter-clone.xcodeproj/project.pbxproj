@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		665A6C202B10E358003132BA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A6C1F2B10E358003132BA /* ImagePicker.swift */; };
 		666EAE3F2AF2128900DD8197 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666EAE3E2AF2128900DD8197 /* TabButton.swift */; };
 		666EFFBE2AF69A1A000C1932 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666EFFBD2AF69A1A000C1932 /* LogInView.swift */; };
 		6673342C2AEB991000D86366 /* CreateTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6673342B2AEB991000D86366 /* CreateTweetView.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		665A6C1F2B10E358003132BA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		666EAE3E2AF2128900DD8197 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		666EFFBD2AF69A1A000C1932 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		6673342B2AEB991000D86366 /* CreateTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTweetView.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				667334372AECD93F00D86366 /* Extensions.swift */,
+				665A6C1F2B10E358003132BA /* ImagePicker.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				667897A32AF4E4D200B2CD76 /* RegisterView.swift in Sources */,
 				6688A9822AEF6BBF008F08B3 /* FollowView.swift in Sources */,
 				66F89EFA2AEAAF63008DA234 /* MessagesView.swift in Sources */,
+				665A6C202B10E358003132BA /* ImagePicker.swift in Sources */,
 				667CE5C12B0F89540001FBB6 /* Tweet.swift in Sources */,
 				666EFFBE2AF69A1A000C1932 /* LogInView.swift in Sources */,
 				667CE5C62B0F8EFA0001FBB6 /* RequestServices.swift in Sources */,
