@@ -25,7 +25,7 @@ public class AuthServices {
     public static var requestDomain = ""
    
     static func login(email: String, password: String, completion: @escaping (_ result: Result<Data?, AuthenticationError>) -> Void) {
-        let urlString = URL(string: "http://localhost:3000/users/login")!
+        let urlString = URL(string: requestDomain)!
         makeRequest(urlString: urlString, reqBody: ["email": email, "password": password]) { res in
             switch res {
                 case .success(let data):

@@ -12,6 +12,8 @@ class AuthViewModel: ObservableObject {
     @Published var currentUser: User?
     
     init() {
+        
+//        logout()
         let defaults = UserDefaults.standard
         let token = defaults.object(forKey: "jsonwebtoken")
         
@@ -40,7 +42,9 @@ class AuthViewModel: ObservableObject {
             
             switch res {
                 case .success(let data):
+                //fix here
                     guard let user = try? JSONDecoder().decode(ApiResponse.self, from: data as! Data) else {
+                        print("decode fail")
                         return
                     }
                     DispatchQueue.main.async {
@@ -48,6 +52,7 @@ class AuthViewModel: ObservableObject {
                         defaults.setValue(user.user.id, forKey: "userid")
                         self.isAuthenticated = true
                         self.currentUser = user.user
+                        
                     }
                     print(user.user.email)
                 case .failure(let error):
@@ -92,6 +97,7 @@ class AuthViewModel: ObservableObject {
             switch res {
                 case .success(let data):
                     guard let user = try? JSONDecoder().decode(User.self, from: data as! Data) else {
+                        
                         return
                     }
                     DispatchQueue.main.async {

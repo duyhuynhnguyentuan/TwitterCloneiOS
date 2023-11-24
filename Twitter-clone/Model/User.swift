@@ -14,17 +14,19 @@ struct ApiResponse: Decodable {
 struct User: Decodable, Identifiable {
     var _id: String
     var name: String
-    let username: String
-    let email: String
-    var id: String {
+    var username: String
+    var email: String
+    var followers: [String]
+    var following: [String]
+    var id: String { // Computed property to match Identifiable protocol
         return _id
     }
+    
+    // Optional properties
     var location: String?
     var bio: String?
     var website: String?
     var avatarExists: Bool?
-    var followers: [String]
-    var followings: [String]
     var isCurrentUser: Bool? = false
     var isFollowed: Bool? = false
-} 
+}
