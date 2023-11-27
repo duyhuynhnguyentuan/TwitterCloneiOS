@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		665A6C202B10E358003132BA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A6C1F2B10E358003132BA /* ImagePicker.swift */; };
+		666B72552B14EC83004935F8 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666B72542B14EC83004935F8 /* ImageUploader.swift */; };
 		666EAE3F2AF2128900DD8197 /* TabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666EAE3E2AF2128900DD8197 /* TabButton.swift */; };
 		666EFFBE2AF69A1A000C1932 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666EFFBD2AF69A1A000C1932 /* LogInView.swift */; };
 		6673342C2AEB991000D86366 /* CreateTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6673342B2AEB991000D86366 /* CreateTweetView.swift */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		665A6C1F2B10E358003132BA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		666B72542B14EC83004935F8 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		666EAE3E2AF2128900DD8197 /* TabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButton.swift; sourceTree = "<group>"; };
 		666EFFBD2AF69A1A000C1932 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		6673342B2AEB991000D86366 /* CreateTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTweetView.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			children = (
 				667CAA682B0A597E00E0259A /* AuthServices.swift */,
 				667CE5C52B0F8EFA0001FBB6 /* RequestServices.swift */,
+				666B72542B14EC83004935F8 /* ImageUploader.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				66F89EF82AEAAF4C008DA234 /* NotificationView.swift in Sources */,
 				667CE5C42B0F8A520001FBB6 /* CreateTweetViewModel.swift in Sources */,
 				666EAE3F2AF2128900DD8197 /* TabButton.swift in Sources */,
+				666B72552B14EC83004935F8 /* ImageUploader.swift in Sources */,
 				6673343A2AECDE3900D86366 /* NotificationCell.swift in Sources */,
 				667334382AECD93F00D86366 /* Extensions.swift in Sources */,
 			);
