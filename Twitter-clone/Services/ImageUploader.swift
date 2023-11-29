@@ -21,7 +21,7 @@ struct ImageUploader {
         urlRequest.httpMethod = "POST"
 
         // Set Content-Type Header to multipart/form-data, this is equivalent to submitting form data with file upload in a web browser
-        // And the bound ary is also set here
+        // And the boundary is also set here
         
         let token = UserDefaults.standard.string(forKey: "jsonwebtoken")!
         print("Bearer \(token)")

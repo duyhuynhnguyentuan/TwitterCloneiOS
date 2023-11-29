@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct FeedView: View {
+    @ObservedObject var viewModel = FeedViewModel()
+    let user : User
     var body: some View {
         ScrollView(.vertical,showsIndicators: false){
-            VStack(spacing: 18){
-                TweetCellView(tweet: "Matcha laf cute soos motoj thees giowis", tweetImage: "post")
-                Divider()
-                ForEach(1...20, id: \.self){ _ in
-                    TweetCellView(tweet: sampleText)
+            LazyVStack(spacing: 18){
+                ForEach(viewModel.tweets) { tweet in
+                    TweetCellView(tweet: tweet.text)
                     Divider()
                 }
             }
@@ -25,6 +25,6 @@ struct FeedView: View {
     }
 }
 
-#Preview {
-    FeedView()
-}
+//#Preview {
+//    FeedView()
+//}
