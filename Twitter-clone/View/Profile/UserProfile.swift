@@ -136,12 +136,7 @@ struct UserProfile: View {
                     )
                     .zIndex(1)
                     VStack(spacing: 18){
-                        TweetCellView(tweet: "Matcha cute vl hahaha", tweetImage: "post")
-                        Divider()
-                        ForEach(0..<20, id: \.self){ _ in
-                            TweetCellView(tweet: sampleText)
-                            Divider()
-                        }
+                    
                     }
                 }
                 .padding(.horizontal)
