@@ -11,6 +11,7 @@ import SwiftUI
 var menuButtons = ["Profile","Lists","Topics","Bookmarks","Moments"]
 
 struct SlideMenu : View {
+    @ObservedObject var viewModel: AuthViewModel
     var edges = UIApplication.shared.windows.first?.safeAreaInsets
     @State var show = true
     
@@ -18,17 +19,23 @@ struct SlideMenu : View {
         VStack {
             HStack(spacing: 0) {
                 VStack(alignment: .leading) {
-                    Image("logo")
-                        .resizable()
-                        .frame(width: 60, height: 60)
-                        .clipShape(Circle())
+                    NavigationLink(destination: UserProfile(user: viewModel.currentUser!)){
+                        Image("logo")
+                            .resizable()
+                            .frame(width: 60, height: 60)
+                            .clipShape(Circle())
+                    }
+                  
                     HStack(alignment: .top, spacing: 12) {
                         VStack(alignment: .leading, spacing: 12) {
-                            Text("Cem")
-                                .font(.title3)
-                                .fontWeight(.bold)
-                                .foregroundColor(.black)
-                            Text("@cem_salta")
+                            NavigationLink(destination: UserProfile(user: viewModel.currentUser!)){
+                                Text(viewModel.currentUser!.name)
+                                    .font(.title3)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.black)
+                            }
+                          
+                            Text("@\(viewModel.currentUser!.name)")
                                 .foregroundColor(.gray)
                             HStack(spacing: 20) {
                                 FollowView(count: 8, title: "Following")
@@ -130,6 +137,6 @@ struct SlideMenu : View {
 
 
 
-#Preview {
-    SlideMenu()
-}
+//#Preview {
+//    SlideMenu()
+//}

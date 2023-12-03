@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct UserProfile: View {
+    let user : User
     @State var offset: CGFloat = 0
     @State var titleOffset: CGFloat = 0
     @State var currentTab = "Tweets"
@@ -31,7 +32,7 @@ struct UserProfile: View {
                                 .cornerRadius(0)
                             BlurView().opacity(blurViewOpacity())
                             VStack(spacing: 5){
-                                Text("Cem")
+                                Text(self.user.username)
                                     .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                                     .foregroundColor(.white)
                                 Text("150 tweets")
@@ -75,11 +76,11 @@ struct UserProfile: View {
                     .padding(.bottom, -10)
                     HStack{
                         VStack(alignment: .leading, spacing: 8){
-                            Text("Cem")
+                            Text(self.user.username)
                                 .font(.title2)
                                 .fontWeight(.bold)
                                 .foregroundColor(.primary)
-                            Text("@cem_salta")
+                            Text("@\(self.user.username)")
                                 .foregroundColor(.gray)
                             Text("Matcha that la cute vc iu Matcha vl 🍃. ")
                             HStack(spacing: 5){
@@ -164,7 +165,7 @@ struct UserProfile: View {
         return scale < 1 ? scale : 1
     }
 }
-
-#Preview {
-    UserProfile()
-}
+//
+//#Preview {
+//    UserProfile()
+//}

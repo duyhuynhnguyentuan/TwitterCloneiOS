@@ -13,7 +13,7 @@ struct Tweet: Identifiable, Decodable {
     let userId: String
     let username: String
     let user: String
-    var id: String {
+    var id: String? {
         return _id
     }
     let image: String?

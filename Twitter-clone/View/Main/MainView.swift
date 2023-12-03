@@ -22,7 +22,7 @@ struct MainView: View {
                         
                     }
                     .offset(x: x + width)
-                    SlideMenu()
+                    SlideMenu(viewModel: AuthViewModel.shared)
                         .shadow(color: Color.black.opacity(x != 0 ? 0.1 : 0 ), radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/, x: 5, y: 0)
                         .offset(x: x)
                         .background(Color.black.opacity(x == 0 ? 0.5 : 0 ))
