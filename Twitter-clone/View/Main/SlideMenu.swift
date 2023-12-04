@@ -57,7 +57,8 @@ struct SlideMenu : View {
                             }
                         } label: {
                             Image(systemName: "chevron.up")
-                                .rotationEffect(show ? .degrees(180) : .degrees(0))                                .foregroundColor(Color("bg"))
+                                .rotationEffect(show ? .degrees(180) : .degrees(0))                               
+                                .foregroundColor(Color("bg"))
                         }
                     }
                     VStack(alignment: .leading) {
