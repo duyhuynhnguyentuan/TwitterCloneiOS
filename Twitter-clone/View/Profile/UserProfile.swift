@@ -9,12 +9,18 @@ import SwiftUI
 
 struct UserProfile: View {
     let user : User
+    @State var editProfileShow = false
+    @ObservedObject var viewModel: ProfileViewModel
     @State var offset: CGFloat = 0
     @State var titleOffset: CGFloat = 0
     @State var currentTab = "Tweets"
     @State var tabBarOffset: CGFloat = 0
     @Namespace var animation
     @Environment(\.colorScheme) var colorScheme
+    init(user: User) {
+        self.user = user
+        self.viewModel = ProfileViewModel(user: user)
+    }
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
             VStack(spacing: 15){
@@ -63,13 +69,17 @@ struct UserProfile: View {
                             .scaleEffect(getScale())
                        Spacer()
                         Button{
-                            
+                            self.editProfileShow.toggle()
                         }label: {
                             Text("Edit profile")
                                 .foregroundColor(.blue)
                                 .padding(.vertical, 10)
                                 .padding(.horizontal)
                                 .background(Capsule().stroke(Color.blue, lineWidth: 1.5))
+                        }.sheet(isPresented: $editProfileShow){
+                            
+                        } content: {
+                            EditProfileView(user: $viewModel.user)
                         }
                     }
                     .padding(.top, -25)
