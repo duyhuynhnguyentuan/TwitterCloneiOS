@@ -10,19 +10,21 @@ import Kingfisher
 struct EditProfileView: View {
     @Binding var user : User
     @State var profileImage: Image?
+    @ObservedObject var viewModel: EditProfileViewModel
     @State var imagePickerPresented = false
     @State private var selectedImage: UIImage?
     @State var name: String
     @State var location : String
     @State var bio : String
     @State var website : String
+    @Environment(\.dismiss) var dismiss
     init(user: Binding<User>){
         self._user = user
         self._name = State(initialValue: self._user.name.wrappedValue ?? "")
         self._location = State(initialValue: self._user.location.wrappedValue ?? "")
         self._bio = State(initialValue: self._user.bio.wrappedValue ?? "")
         self._website = State(initialValue: self._user.website.wrappedValue ?? "")
-
+        self.viewModel = EditProfileViewModel(user: self._user.wrappedValue)
 
     }
     var body: some View {
@@ -30,7 +32,7 @@ struct EditProfileView: View {
             ZStack{
                 HStack{
                     Button {
-                        
+                        dismiss()
                     }label: {
                         Text("Cancel")
                             .foregroundColor(.black)
@@ -38,7 +40,7 @@ struct EditProfileView: View {
                     Spacer()
                     
                     Button {
-                        
+                        self.viewModel.save(name: name, bio: bio, website: website, location: location)
                     }label: {
                         Text("Save")
                             .foregroundColor(.black)
@@ -171,6 +173,15 @@ struct EditProfileView: View {
                 }
             }
             Spacer()
+        }
+        .onReceive(viewModel.$uploadComplete) { complete in
+            if complete {
+                dismiss()
+                self.user.name = viewModel.user.name
+                self.user.website = viewModel.user.website
+                self.user.location = viewModel.user.location
+                self.user.bio = viewModel.user.bio
+            }
         }
     }
 }
